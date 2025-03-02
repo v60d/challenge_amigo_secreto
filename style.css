@@ -1,0 +1,189 @@
+:root {
+    --color-primary: rgb(1, 0, 0.2, 1); 
+    --color-secondary: rgba(25, 0, 255, 0.108); 
+    --color-tertiary: rgba(255, 117, 117, 0.255); 
+    --color-button: rgba(0, 0, 0, 0.9); 
+    --color-button-hover: rgba(0, 0, 0, 0.9); 
+    --color-text: rgba(45, 52, 54, 0.9); 
+    --color-white: rgba(255, 255, 255, 0.9); 
+    --color-shadow: rgba(45, 52, 54, 0.1); 
+    --color-border: #17f0e1df; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-y: auto;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1739761613270-a48d0d1190ba?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Cambia la ruta a tu imagen */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "Inter", sans-serif;
+    color: var(--color-text);
+    padding: 20px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    width: 90%;
+    max-width: 1200px;
+    background-color: var(--color-white); 
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--color-shadow);
+    overflow: hidden;
+    backdrop-filter: blur(-10px); 
+}
+
+/* Banner */
+.header-banner {
+    flex: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary); 
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.header-banner img {
+    border-radius: 10px;
+    width: 120px;
+    margin-top: 20px;
+}
+
+/* Títulos */
+.main-title {
+    font-size: 48px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Sección de entrada */
+.input-section {
+    flex: 60%;
+    background-color: var(--color-secondary); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+/* Contenedores de entrada y botón */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.input-name {
+    width: 70%;
+    padding: 12px 20px;
+    border: 2px solid var(--color-border);
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-name:focus {
+    border-color: var(--color-primary);
+}
+
+.button-add {
+    width: 30%;
+    padding: 12px 20px;
+    background-color: var(--color-button); 
+    color: var(--color-white);
+    border: none;
+    border-radius: 0 25px 25px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-add:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Listas */
+ul {
+    list-style-type: none;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.name-list li {
+    background-color: var(--color-white); /* Fondo semi-transparente */
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--color-shadow);
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-list {
+    margin-top: 20px;
+    color: var(--color-button); /* Verde menta para los resultados */
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Botón de sorteo */
+.button-draw {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    padding: 15px 20px;
+    background-color: var(--color-button); /* Fondo semi-transparente */
+    color: var(--color-white);
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.button-draw img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover);
+}
