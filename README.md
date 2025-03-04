@@ -2,7 +2,7 @@
 
 <img width= "400" alt = "Imagen creada en Canva" src= "https://github.com/user-attachments/assets/b82402cc-d56d-427c-8074-d4d9c061c5ae" align ="center">
      
-- Estado del proyecto: En desarrollo
+- Estado del proyecto: Finalizado
 
 - Funcionalidades a desarrollar:
      
@@ -19,7 +19,3 @@
 
      Sorteo aleatorio: Al hacer clic en el botón "Sortear Amigo", se seleccionará aleatoriamente un nombre de la lista y se mostrará en la página.
 
-     <h1 align="center">Crear un array para almacenar los nombres</h1> 
-- Inicia declarando una variable de tipo array, que almacenará los nombres de los amigos ingresados. Ejemplo:
-
-let amigos = []
