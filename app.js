@@ -56,3 +56,8 @@ let nombresMostrados = [];
           return `rgb (${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
      
      }
+
+     // Función para generar un color aleatorio
+function generarColorAleatorio() {
+     return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+ }
