@@ -61,3 +61,17 @@ let nombresMostrados = [];
 function generarColorAleatorio() {
      return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
  }
+
+ // Función para deshabilitar o habilitar botones
+function deshabilitarBotones(deshabilitar = true) {
+     const botonMostrarNombres = document.getElementById("mostrarNombres");
+     const botonReiniciar = document.getElementById("reiniciar");
+ 
+     if (deshabilitar) {
+         botonMostrarNombres.disabled = true;
+         botonReiniciar.classList.add("resaltado"); // Resaltar el botón de reinicio
+     } else {
+         botonMostrarNombres.disabled = false;
+         botonReiniciar.classList.remove("resaltado"); // Quitar el resaltado
+     }
+ }
