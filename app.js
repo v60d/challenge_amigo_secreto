@@ -50,3 +50,9 @@ let nombresMostrados = [];
           const contador = document.getElementById('contadorNombres');
           contador.textContent = `Nombres agregados: ${listaAmigos.length}`;
      }
+
+//Función para mostrar un nombre aleatorio
+     function generarColorAleatorio() {
+          return `rgb (${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+     
+     }
