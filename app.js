@@ -89,3 +89,82 @@ function parpadearElemento(elemento) {
          }
      }, 300); // Cambiar la visibilidad cada 300 ms
  }
+
+ // Función para mostrar nombres aleatorios durante la ruleta
+function mostrarNombresAleatorios() {
+     if (!listaAmigos || listaAmigos.length === 0) {
+         alert("No hay nombres en la lista. Agrega algunos amigos primero.");
+         return;
+     }
+ 
+     const resultado = document.getElementById("resultado");
+     if (!resultado) {
+         console.error("El elemento 'resultado' no existe en el DOM.");
+         return;
+     }
+ 
+     nombresMostrados = []; // Reiniciar la lista de nombres mostrados
+     deshabilitarBotones(true); // Deshabilitar botones durante la ruleta
+ 
+     // Función recursiva para mostrar nombres
+     function mostrarNombre() {
+         if (nombresMostrados.length === listaAmigos.length) {
+             // Seleccionar un nombre aleatorio como resultado final
+             const indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
+             const nombreElegido = listaAmigos[indiceAleatorio];
+ 
+             // Mostrar el nombre elegido en negro
+             resultado.innerHTML = `<span style="color: black; font-weight: bold;">¡Tu amigo secreto es: ${nombreElegido}!</span>`;
+ 
+             // Hacer parpadear el nombre elegido en la lista
+             const lista = document.getElementById("listaAmigos");
+             const items = lista.getElementsByTagName("li");
+             for (let item of items) {
+                 if (item.textContent === nombreElegido) {
+                     parpadearElemento(item); // Aplicar la animación de parpadeo
+                     break;
+                 }
+             }
+ 
+             // Resaltar el botón de reinicio
+             const botonReiniciar = document.getElementById("reiniciar");
+             botonReiniciar.style.backgroundColor = "#ffcc00";
+             botonReiniciar.style.color = "#000";
+             return;
+         }
+ 
+         // Seleccionar un nombre aleatorio
+         const indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
+         const nombreAleatorio = listaAmigos[indiceAleatorio];
+ 
+         // Mostrar el nombre con un color aleatorio
+         const colorAleatorio = generarColorAleatorio();
+         resultado.innerHTML = `<span style="color: ${colorAleatorio};">${nombreAleatorio}</span>`;
+ 
+         // Agregar el nombre a la lista de nombres mostrados
+         nombresMostrados.push(nombreAleatorio);
+ 
+         // Continuar la ruleta
+         setTimeout(mostrarNombre, 200); // Mostrar un nombre cada 200 ms
+     }
+ 
+     // Iniciar la ruleta
+     mostrarNombre();
+ }
+ 
+ // Función para reiniciar el juego
+ function reiniciarJuego() {
+     const usarMismaLista = confirm("¿Usar la misma lista de nombres?");
+ 
+     if (!usarMismaLista) {
+         listaAmigos = []; // Vaciar la lista de amigos si el usuario no quiere usar la misma lista
+     }
+ 
+     nombresMostrados = []; // Vaciar la lista de nombres mostrados
+     actualizarListaAmigos(); // Actualizar la lista en la página
+     const resultado = document.getElementById("resultado");
+     resultado.innerHTML = ""; // Limpiar el resultado
+ 
+     // Restaurar el estado de los botones
+     deshabilitarBotones(false);
+ }
