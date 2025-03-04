@@ -22,7 +22,7 @@ html, body {
 }
 
 body {
-    background-image: url('https://images.unsplash.com/photo-1739761613270-a48d0d1190ba?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Cambia la ruta a tu imagen */
+    background-image: url('https://images.unsplash.com/photo-1739761613270-a48d0d1190ba?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -142,7 +142,7 @@ ul {
 }
 
 .name-list li {
-    background-color: var(--color-white); /* Fondo semi-transparente */
+    background-color: var(--color-white); 
     padding: 10px 20px;
     margin: 10px 0;
     border-radius: 10px;
@@ -155,7 +155,7 @@ ul {
 
 .result-list {
     margin-top: 20px;
-    color: var(--color-button); /* Verde menta para los resultados */
+    color: var(--color-button); 
     font-size: 22px;
     font-weight: bold;
     text-align: center;
@@ -169,7 +169,7 @@ ul {
     width: 100%;
     max-width: 300px;
     padding: 15px 20px;
-    background-color: var(--color-button); /* Fondo semi-transparente */
+    background-color: var(--color-button); 
     color: var(--color-white);
     border: none;
     border-radius: 25px;
@@ -181,9 +181,35 @@ ul {
 
 .button-draw img {
     width: 24px;
+    height: 24px;
     margin-right: 10px;
 }
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+/* Estilo para el botón deshabilitado */
+.button-draw:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Estilo para resaltar el botón de reinicio */
+#reiniciar.resaltado {
+    background-color: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Animación para resaltar el último nombre agregado */
+@keyframes resaltar {
+    0% { background-color: #ffcc00; }
+    100% { background-color: transparent; }
+}
+
+.resaltado {
+    animation: resaltar 1s ease-in-out;
 }
