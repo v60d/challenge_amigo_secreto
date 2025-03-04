@@ -75,3 +75,17 @@ function deshabilitarBotones(deshabilitar = true) {
          botonReiniciar.classList.remove("resaltado"); // Quitar el resaltado
      }
  }
+
+ // Función para hacer parpadear un elemento
+function parpadearElemento(elemento) {
+     let contador = 0;
+     const intervalo = setInterval(() => {
+         elemento.style.visibility = (elemento.style.visibility === "hidden" ? "visible" : "hidden");
+         contador++;
+ 
+         if (contador === 6) { // Parpadear 3 veces (visible -> hidden -> visible -> hidden -> visible -> hidden -> visible)
+             clearInterval(intervalo);
+             elemento.style.visibility = "visible"; // Asegurarse de que el elemento esté visible al final
+         }
+     }, 300); // Cambiar la visibilidad cada 300 ms
+ }
